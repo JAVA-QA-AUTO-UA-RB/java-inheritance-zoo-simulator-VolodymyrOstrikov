@@ -1,21 +1,30 @@
 package com.zoo;
 
+import com.zoo.species.*;
+import com.zoo.zookeper.ZooKeeper;
+
 public class ZooSimulator {
 
     public static void main(String[] args) {
+        Lion bob = new Lion("Bob", 10, 180.0, 90, "Brown");
+        Elephant bigGuy = new Elephant("BigGuy", 8, 1000.0, 80, "Gray");
+        Eagle tommy = new Eagle("Tommy", 3, 10.0, 60, 2.0);
+        Penguin bernard = new Penguin("Bernard", 2, 14.0, 50, 0.5);
 
-        // Створіть кілька об'єктів різних тварин (лев, орел, пінгвін, слон), задавши їх унікальні параметри.
+        ZooKeeper keeper = new ZooKeeper("Mr_Keeper");
 
-        // Створіть об'єкт ZooKeeper і прив'яжіть його до зоопарку.
+        keeper.feedAnimal(bob);
+        keeper.playWithAnimal(bernard);
+        keeper.playWithAnimal(bigGuy);
+        keeper.checkAnimalEnergyLevel(bigGuy);
+        keeper.groomMammal(bob);
+        keeper.showAnimalInfo(bernard);
+        keeper.showAnimalInfo(bob);
 
-        // Додайте логіку, яка представляє типові події дня в зоопарку:
-        // - Годування тварин: використання методу feedAnimal().
-        // - Гра з тваринами: використання методу playWithAnimal().
-        // - Перевірка рівня енергії тварин: використання методу checkAnimalEnergyLevel().
-
-        // Симулюйте зміну стану тварин (наприклад, втома після грається, зростання енергії після їжі).
-
-        // Виведіть фінальні результати та стани тварин наприкінці дня.
-
+        bob.hunt();
+        tommy.fly();
+        bernard.fly();
+        bigGuy.spraySelf();
+        bob.sleep();
     }
 }
