@@ -2,11 +2,32 @@ package com.zoo.species;
 
 
 import com.zoo.animals.Bird;
+import com.zoo.animals.IPlayable;
 
-public class Eagle extends Bird {
+public class Eagle extends Bird implements IPlayable {
 
-    public Eagle(String name, int age, double weight, int energyLevel, double wingSpan) {
-        super(name, age, weight, energyLevel, wingSpan);
+    public Eagle(String name, int energyLevel) {
+        super(name, energyLevel);
+    }
+
+    @Override
+    public void uniqueBirdAction() {
+
+    }
+
+    @Override
+    public void eat() {
+
+    }
+
+    @Override
+    public void sleep() {
+
+    }
+
+    @Override
+    public void play() {
+
     }
 
     @Override
@@ -14,9 +35,5 @@ public class Eagle extends Bird {
         System.out.println("Screeches!");
     }
 
-    @Override
-    public void fly() {
-        System.out.println(name + " is soaring high in the sky.");
-        setEnergyLevel(getEnergyLevel() - 20);
-    }
+
 }

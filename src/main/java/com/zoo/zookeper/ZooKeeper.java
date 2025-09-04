@@ -1,7 +1,8 @@
 package com.zoo.zookeper;
 
 import com.zoo.animals.Animal;
-import com.zoo.animals.Mammal;
+import com.zoo.species.Elephant;
+import com.zoo.species.Lion;
 
 
 public class ZooKeeper {
@@ -11,15 +12,15 @@ public class ZooKeeper {
         this.name = name;
     }
 
-    public void feedAnimal(Animal animal) {
+    public void feedAnimal(Lion animal) {
         System.out.println(name + " feeds " + animal.getName());
         animal.eat();
     }
 
-    public void playWithAnimal(Animal animal) {
+    public void playWithAnimal(Elephant animal) {
         System.out.println(name + " plays with " + animal.getName());
         animal.makeSound();
-        animal.setHappinessLevel(animal.getHappinessLevel() + 10);
+
     }
 
     public void checkAnimalEnergyLevel(Animal animal) {
@@ -29,15 +30,5 @@ public class ZooKeeper {
         else if (energy > 30 && energy <= 70) status = "Medium";
         else status = "High";
         System.out.println(animal.getName() + " has " + status + " energy.");
-    }
-
-    public void groomMammal(Mammal mammal) {
-        System.out.println(name + " is grooming " + mammal.getName());
-        mammal.groom();
-    }
-
-    public void showAnimalInfo(Animal animal) {
-        System.out.println(name + " is checking info about " + animal.getName() + ":");
-        animal.displayInfo();
     }
 }

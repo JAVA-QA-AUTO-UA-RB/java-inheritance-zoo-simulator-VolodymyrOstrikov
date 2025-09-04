@@ -1,11 +1,12 @@
 package com.zoo.species;
 
+import com.zoo.animals.IPlayable;
 import com.zoo.animals.Mammal;
 
 
-public class Lion extends Mammal {
-    public Lion(String name, int age, double weight, int energyLevel, String furColor) {
-        super(name, age, weight, energyLevel, furColor);
+public class Lion extends Mammal implements IPlayable {
+    public Lion(String name, int energyLevel) {
+        super(name, energyLevel);
     }
 
     @Override
@@ -13,10 +14,20 @@ public class Lion extends Mammal {
         System.out.println(name + " Roars!");
     }
 
-    public void hunt() {
-        System.out.println(name + " is hunting!");
-        setEnergyLevel(getEnergyLevel() - 25);
-        setHappinessLevel(getHappinessLevel() + 5);
+    @Override
+    public void eat() {
+        System.out.println(name + " eats meat.");
+        setEnergyLevel(getEnergyLevel() + 20);
+    }
+
+    @Override
+    public void play() {
+
+    }
+
+    @Override
+    public void move() {
+
     }
 
     @Override
@@ -27,6 +38,6 @@ public class Lion extends Mammal {
         if (newEnergy > 100) newEnergy = 100;
         setEnergyLevel(newEnergy);
 
-        setHappinessLevel(getHappinessLevel() + 10);
+
     }
 }

@@ -1,12 +1,13 @@
 package com.zoo.species;
 
 import com.zoo.animals.Bird;
+import com.zoo.animals.IPlayable;
 
 
-public class Penguin extends Bird {
+public class Penguin extends Bird implements IPlayable {
 
-    public Penguin(String name, int age, double weight, int energyLevel, double wingSpan) {
-        super(name, age, weight, energyLevel, wingSpan);
+    public Penguin(String name, int energyLevel) {
+        super(name, energyLevel);
     }
 
     @Override
@@ -14,14 +15,23 @@ public class Penguin extends Bird {
         System.out.println(name + " Squawks! ");
     }
 
-    public void swim() {
-        System.out.println(name + " swims in ice-cold water.");
-        setEnergyLevel(getEnergyLevel() - 10);
+    @Override
+    public void eat() {
+
     }
 
     @Override
-    public void fly() {
-        System.out.println(name + " doesn't fly, but swims instead!");
-        swim();
+    public void sleep() {
+
+    }
+
+    @Override
+    public void uniqueBirdAction() {
+
+    }
+
+    @Override
+    public void play() {
+
     }
 }
