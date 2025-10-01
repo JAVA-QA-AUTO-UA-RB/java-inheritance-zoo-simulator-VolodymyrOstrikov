@@ -3,11 +3,10 @@ package com.zoo.species;
 import com.zoo.animals.Bird;
 import com.zoo.animals.IPlayable;
 
-
 public class Penguin extends Bird implements IPlayable {
 
-    public Penguin(String name, int energyLevel) {
-        super(name, energyLevel);
+    public Penguin(String name, int age,double weight) {
+        super(name, age, weight);
     }
 
     @Override

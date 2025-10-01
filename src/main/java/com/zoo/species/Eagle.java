@@ -6,8 +6,8 @@ import com.zoo.animals.IPlayable;
 
 public class Eagle extends Bird implements IPlayable {
 
-    public Eagle(String name, int energyLevel) {
-        super(name, energyLevel);
+    public Eagle(String name, int age, double weight) {
+        super(name, age, weight);
     }
 
     @Override
@@ -32,7 +32,7 @@ public class Eagle extends Bird implements IPlayable {
 
     @Override
     public void makeSound() {
-        System.out.println("Screeches!");
+        System.out.println(name + " -Screeches! ");
     }
 
 

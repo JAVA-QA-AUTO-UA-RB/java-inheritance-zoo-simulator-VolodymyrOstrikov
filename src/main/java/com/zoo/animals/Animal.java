@@ -2,13 +2,17 @@ package com.zoo.animals;
 
 public class Animal {
 
-
-
     protected String name;
     protected int age;
     protected double weight;
     private int energyLevel = 50;
     private int happinessLevel = 50;
+
+    public Animal(String name, int age, double weight) {
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+    }
 
     private void setEnergyLevel(int energyLevel) {
         if (energyLevel > 100) {
@@ -31,12 +35,6 @@ public class Animal {
         }
     }
 
-    public Animal(String name, int age, double weight, int energyLevel) {
-        this.name = name;
-        this.age = age;
-        this.weight = weight;
-
-    }
 
     protected void increaseEnergyLevelBy(int points) {
         setEnergyLevel(this.energyLevel + points);
