@@ -3,6 +3,7 @@ package com.zoo.animals;
 public class Animal {
 
 
+
     protected String name;
     protected int age;
     protected double weight;
