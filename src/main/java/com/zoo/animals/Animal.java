@@ -1,25 +1,20 @@
 package com.zoo.animals;
 
-public abstract class Animal implements IEatable, ISleepable {
+public class Animal {
 
     protected String name;
-    protected int energyLevel;
+    protected int age;
+    protected double weight;
+    private int energyLevel = 50;
+    private int happinessLevel = 50;
 
-
-    public Animal(String name, int energyLevel) {
+    public Animal(String name, int age, double weight) {
         this.name = name;
-        this.energyLevel = energyLevel;
+        this.age = age;
+        this.weight = weight;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getEnergyLevel() {
-        return energyLevel;
-    }
-
-    public void setEnergyLevel(int energyLevel) {
+    private void setEnergyLevel(int energyLevel) {
         if (energyLevel > 100) {
             this.energyLevel = 100;
         } else if (energyLevel < 0) {
@@ -30,6 +25,62 @@ public abstract class Animal implements IEatable, ISleepable {
 
     }
 
-    public abstract void makeSound();
+    private void setHappinessLevel(int happinessLevel) {
+        if (happinessLevel < 0) {
+            this.happinessLevel = 0;
+        } else if (happinessLevel > 100) {
+            this.happinessLevel = 100;
+        } else {
+            this.happinessLevel = happinessLevel;
+        }
+    }
 
+
+    protected void increaseEnergyLevelBy(int points) {
+        setEnergyLevel(this.energyLevel + points);
+    }
+
+    protected void decreaseEnergyLevelBy(int points) {
+        setEnergyLevel(this.energyLevel - points);
+    }
+
+    public void eat() {
+        increaseEnergyLevelBy(20);
+        setHappinessLevel(getHappinessLevel() + 5);
+    }
+
+    public void sleep() {
+        increaseEnergyLevelBy(30);
+        setHappinessLevel(getHappinessLevel() + 5);
+    }
+
+
+    public void makeSound() {
+        System.out.println(name + " makes a sound.");
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age + ", Weight: " + weight + ", Energy: " + energyLevel +
+                ", Happiness: " + happinessLevel);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public int getEnergyLevel() {
+        return energyLevel;
+    }
+
+    public int getHappinessLevel() {
+        return happinessLevel;
+    }
 }

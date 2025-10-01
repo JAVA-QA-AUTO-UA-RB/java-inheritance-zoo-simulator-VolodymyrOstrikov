@@ -4,7 +4,6 @@ import com.zoo.animals.Animal;
 import com.zoo.species.Elephant;
 import com.zoo.species.Lion;
 
-
 public class ZooKeeper {
     private String name;
 

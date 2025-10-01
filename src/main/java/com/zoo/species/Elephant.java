@@ -3,11 +3,10 @@ package com.zoo.species;
 import com.zoo.animals.IPlayable;
 import com.zoo.animals.Mammal;
 
-
 public class Elephant extends Mammal implements IPlayable {
 
-    public Elephant(String name, int energyLevel) {
-        super(name, energyLevel);
+    public Elephant(String name, int energyLevel, double weight) {
+        super(name, energyLevel, weight);
     }
 
     @Override
@@ -32,7 +31,7 @@ public class Elephant extends Mammal implements IPlayable {
 
     @Override
     public void makeSound() {
-        System.out.println(name + " Trumpets! ");
+        System.out.println(name + " -Trumpets! ");
     }
 
 

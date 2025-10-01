@@ -15,10 +15,10 @@ public class ZooSimulator {
     public static void main(String[] args) {
         ZooKeeper keeper = new ZooKeeper("Mr_Keeper");
 
-        Lion lion = new Lion("Bob", 10);
-        Elephant elephant = new Elephant("BigGuy", 8);
-        Eagle eagle = new Eagle("Tommy", 3);
-        Penguin penguin = new Penguin("Bernard", 2);
+        Lion lion = new Lion("Bob", 10,100);
+        Elephant elephant = new Elephant("BigGuy", 8,1000);
+        Eagle eagle = new Eagle("Tommy", 3, 15);
+        Penguin penguin = new Penguin("Bernard", 2, 20);
 
 
         List<Animal> animals = new ArrayList<>();
